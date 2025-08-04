@@ -29,7 +29,10 @@ connectDB();
 
 // Routes
 
-app.use('/',"welcome");
+app.get('/', (req, res) => {
+  res.json({ status: 'welcome', message: 'Free Fire Tournament API is running' });
+});
+
 app.use('/api/team', require('./routes/registrationRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/user', require('./routes/userRoutes'));
